@@ -48,7 +48,7 @@ group :development, :test do
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'database_cleaner'
-  
+  gem 'simplecov', require: false
 end
 
 group :development do
