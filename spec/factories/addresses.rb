@@ -4,7 +4,7 @@ FactoryBot.define do
     state Faker::Address.state
     city Faker::Address.city
     address Faker::Address.street_address
-    zip '49000'
+    zip 49000
     user
   end
 end

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :advert do
     user
-    login Faker::Lorem.words
+    description Faker::Lorem.words
   end
 end

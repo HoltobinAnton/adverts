@@ -16,7 +16,6 @@ RSpec.describe Address, type: :model do
       end
       it 'validate_numericality_of :quantity' do
         should validate_numericality_of(:zip).is_greater_than(3)
-        should validate_numericality_of(:zip).is_less_than_or_equal_to(10)
       end
     end
   end
