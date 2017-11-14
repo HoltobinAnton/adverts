@@ -20,4 +20,8 @@ RSpec.describe Address, type: :model do
       end
     end
   end
+
+  describe 'associations' do
+    it { is_expected.to belong_to(:user) }
+  end
 end
