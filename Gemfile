@@ -26,7 +26,8 @@ gem 'haml'
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
 gem 'rails_admin'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug', platform: :mri
