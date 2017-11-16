@@ -18,7 +18,9 @@ gem 'figaro'
 gem 'pg'
 gem 'devise'
 gem 'faker'
-
+gem 'carrierwave', '~> 1.0'
+gem 'fog'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platform: :mri
