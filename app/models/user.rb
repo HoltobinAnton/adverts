@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
   validates :login, :full_name, :birthday, presence: true
   validates_length_of :login, maximum: 20
   validates_length_of :full_name, maximum: 30
@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :adverts
   has_one :address
   belongs_to :role
-
+  attr_accessor :login
 end
