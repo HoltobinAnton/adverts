@@ -33,6 +33,16 @@ $footer-sticky-height: 170px;
     }
 }
 
+.border-none {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
 .drop-down-newest-first{
   padding-left: 20px;  
   padding-right: 68px;  

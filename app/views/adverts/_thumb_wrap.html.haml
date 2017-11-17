@@ -1,0 +1,13 @@
+- adverts.each do |advert|
+  .col-xs-6.col-sm-3
+    .general-thumb-wrap
+      .thumbnail.general-thumbnail
+        = image_tag advert.avatar, class: "img-shadow general-thumbnail-img", alt: "design-advert"
+        .thumb-hover
+          .general-thumb-link-wrap
+            = link_to advert, class: "thumb-hover-link", id: "thumb_eye_icon" do
+              %i.fa.fa-eye.thumb-icon{'aria-hidden': "true"}
+    .general-thumb-info
+      %p.title= get_desc(advert.description)
+      %span.divider-sm
+      %p.lead.small= advert.user.full_name.slice(0..35)

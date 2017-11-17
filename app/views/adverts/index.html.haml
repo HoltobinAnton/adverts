@@ -1,1 +1,5 @@
-Hello
+%main.container
+  .mb-120
+    = render partial: 'thumb_wrap', locals: { adverts: @adverts }
+  
+= link_to 'New Advert', new_advert_path

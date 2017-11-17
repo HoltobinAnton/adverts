@@ -24,18 +24,16 @@ class AdvertsController < ApplicationController
   # POST /adverts
   # POST /adverts.json
   def create
-    @advert = Advert.new(advert_params)
+   @advert = Advert.new(advert_params)
 
-    respond_to do |format|
-      if @advert.save
-        format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
-        format.json { render :show, status: :created, location: @advert }
-      else
-        format.html { render :new }
-        format.json { render json: @advert.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+   respond_to do |format|
+     if @advert.save
+       format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+     else
+       format.html { render action: 'new' }
+     end
+   end
+ end
 
   # PATCH/PUT /adverts/1
   # PATCH/PUT /adverts/1.json
@@ -66,7 +64,16 @@ class AdvertsController < ApplicationController
     @advert = Advert.find(params[:id])
   end
   
+  #def advert_params
+  #  #params.require(:project).permit(:description,  images_attributes: [:id, :parent_type, :parent_id, :attachment, :_destroy])
+  #  params.require(:advert).permit!
+  #end
+
   def advert_params
-    params.require(:advert).permit!
+    params.require(:advert).permit(:description, :avatar, :user_id)
   end
+
+  #def advert_params
+  #  params.require(:advert).permit(:description, :user_id, :picture_attributes => [:id, :image, :imageable_id, :imageable_type, :_destroy])
+  #end
 end

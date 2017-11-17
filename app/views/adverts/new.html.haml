@@ -1,0 +1,7 @@
+%main.container
+  .center-container
+    %h4.in-gold-500.mb-25= t('Create Advert')
+    .text-left
+      = link_to 'Back', :back
+    = render partial: 'form', locals: { advert: @advert }
+
