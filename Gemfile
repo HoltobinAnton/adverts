@@ -29,6 +29,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'rails_admin'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem "remotipart", "~> 1.0"
 
 group :development, :test do
   gem 'byebug', platform: :mri
