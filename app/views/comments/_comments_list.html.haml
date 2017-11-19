@@ -10,7 +10,7 @@
         .general-message-verified= comment.created_at.strftime("%Y/%m/%d")
         .general-message-verified= t('create_at:')
         .general-message-name= comment.user.full_name
-    %p= comment.description
+    %p= textile(strip_tags(comment.description)).html_safe
     = image_tag comment.avatar, class: "comment_image", alt: "design-advert"
     .general-message-wrap.divider-lg
 

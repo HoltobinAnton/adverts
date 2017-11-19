@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.5)
+    RedCloth (4.3.2)
     actioncable (5.0.6)
       actionpack (= 5.0.6)
       nio4r (>= 1.2, < 3.0)
@@ -508,6 +509,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   bootstrap-sass
   byebug
   capybara

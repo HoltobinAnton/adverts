@@ -19,9 +19,9 @@
               = link_to t('my_account'), {}, class: "dropdown-toggle", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"
               %ul.dropdown-menu
                 %li
-                  = link_to t('setting'), edit_user_path(address: { user_id: @user.id })
+                  = link_to t('setting'), edit_user_path(address: { user_id: current_user.id })
                 %li
-                  = link_to t('my_orders'), edit_user_registration_path
+                  = link_to t('my_adverts'), edit_user_registration_path
                 - if current_user.role.name.eql?('admin')
                   %li
                     = link_to t('admin_panel'), rails_admin.dashboard_path

@@ -5,4 +5,8 @@ module AdvertsHelper
     end
     value
   end
+
+  def textile(text)
+    RedCloth.new(text).to_html
+  end
 end
