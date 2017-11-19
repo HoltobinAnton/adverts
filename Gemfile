@@ -30,6 +30,8 @@ gem 'rails_admin'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem "remotipart", "~> 1.0"
+gem 'rectify'
+gem 'wicked'
 
 group :development, :test do
   gem 'byebug', platform: :mri

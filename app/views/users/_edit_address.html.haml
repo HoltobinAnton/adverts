@@ -1,0 +1,23 @@
+%main.container
+  .res-mb-100
+    .row
+      .col-sm-4
+        = form_for address, method: :get,:url => { :action => "edit" }, :html => {:class => "general-form"} do |f|
+          .form-group.mb-30
+            = f.hidden_field(:user_id, value: address.user_id)
+            %label.control-label.font-weight-light{for: "country"}= t('country')
+            = f.text_field :country, class: "form-control get-address", id: 'country'
+            %label.control-label.font-weight-light{for: "city"}= t('city')
+            = f.text_field :city, class: "form-control get-address", id: 'city'
+            %label.control-label.font-weight-light{for: "state"}= t('state')
+            = f.text_field :state, class: "form-control get-address", id: 'state'
+            %label.control-label.font-weight-light{for: "address"}= t('address')
+            = f.text_field :address, class: "form-control get-address", id: 'address'
+            %label.control-label.font-weight-light{for: "zip"}= t('zip')
+            = f.text_field :zip, class: "form-control get-address"
+            %br
+              = f.submit 'Update address', class: 'center-block mb-20 btn btn-default'
+      .col-sm-6.margin-left
+        .product-gallery.marg-top
+          .mb-20
+            = render partial: "google_map", locals: { address: address }

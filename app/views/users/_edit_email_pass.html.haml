@@ -1,0 +1,26 @@
+.col-sm-5
+  %p.in-gold-500.font-18.mb-25 User info
+  = form_for(@user, method: :put, class: "general-form-md") do |f|
+    .form-group.mb-30
+      = f.label :email, t('new_email'), class: "control-label input-label"
+      = f.email_field :email, placeholder: t("enter_new_email"), class: "form-control"
+      = f.label :login, t('new_login'), class: "control-label input-label"
+      = f.text_field :login, placeholder: t("enter_new_email"), class: "form-control"
+      = f.label :full_name, t('new_full_name'), class: "control-label input-label"
+      = f.text_field :full_name, placeholder: t("enter_new_email"), class: "form-control"
+      = f.label :birthday, t('new_birthday'), class: "control-label input-label"
+      = f.date_field :birthday, placeholder: t("enter_new_email"), class: "form-control"
+    .general-text-align
+      = f.submit 'Save user info', class: "btn btn-default mb-20"
+
+.col-sm-5.col-sm-offset-1
+  %p.in-gold-500.font-18.mb-25= t('password')
+  = form_for(@user, method: :put, class: "general-form-md divider-lg-bottom pb-25" ) do |f|
+    .form-group.mb-30
+      = f.label :password,t('new_password'), class: "control-label input-label"
+      = f.password_field :password, class: "form-control", placeholder: t("new_password")
+    .form-group.mb-40
+      = f.label :password_confirmation, t('password_confirmation'), class: "control-label input-label"
+      = f.password_field :password_confirmation, class: "form-control", placeholder: t("confirm_password")
+    .general-text-align
+      = f.submit 'Save password', class: "btn btn-default mb-20"

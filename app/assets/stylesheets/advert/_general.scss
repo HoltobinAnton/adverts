@@ -33,6 +33,11 @@ $footer-sticky-height: 170px;
     }
 }
 
+.margin-left{
+  margin-left: 30px;
+  margin-top: 45px;
+}
+
 .border-none {
     border: none;
     overflow: auto;
@@ -87,7 +92,9 @@ $footer-sticky-height: 170px;
   color: grey;
 }
 
-
+.marg-top{
+  margin-top: -40px;
+}
 
 ul.language li {
   color: grey;

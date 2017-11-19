@@ -3,8 +3,8 @@
   = link_to user_facebook_omniauth_authorize_path, class: "general-login-icon" do
     %i.fa.fa-facebook-official
   %p.general-login-text= t('or')
-= render partial: 'sign_up_form'
-= render partial: 'google_map'
+= render partial: 'sign_up_form', locals: { user: @user }
 %p.general-sign-text.text-center
   = t('have_account')
-  = link_to t('sign_in'), new_session_path(resource_name), class: 'in-gold-500'
+  = link_to t('sign_in'), new_user_session_path, class: 'in-gold-500'
+= render partial: 'google_map'

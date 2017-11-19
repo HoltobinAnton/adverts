@@ -1,0 +1,9 @@
+%main.container
+  = render partial: 'checkout_steps'
+  .res-mb-100
+    .row
+      .col-sm-6
+        .hidden-xs.hidden-sm
+          = render partial: 'address_form'
+      .col-sm-6
+        = render partial: 'google_map'

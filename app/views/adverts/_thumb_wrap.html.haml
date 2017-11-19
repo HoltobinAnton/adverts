@@ -10,4 +10,5 @@
     .general-thumb-info
       %p.title= get_desc(advert.description)
       %span.divider-sm
-      %p.lead.small= advert.user.full_name.slice(0..35)
+      = link_to look_at_user_path(advert.user.id) do
+        %p.lead.small= advert.user.full_name.slice(0..35)

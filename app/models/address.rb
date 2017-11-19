@@ -4,4 +4,5 @@ class Address < ApplicationRecord
   validates_length_of :city, :address, :state, :country, maximum: 25
   
   belongs_to :user
+
 end

@@ -1,0 +1,11 @@
+= f.fields_for :address_attributes do |address|
+  %label.control-label.font-weight-light{for: "country"}= t('country')
+  = address.text_field :country, class: "form-control"
+  %label.control-label.font-weight-light{for: "city"}= t('city')
+  = address.text_field :city, class: "form-control"
+  %label.control-label.font-weight-light{for: "state"}= t('state')
+  = address.text_field :state, class: "form-control"
+  %label.control-label.font-weight-light{for: "address"}= t('address')
+  = address.text_field :address, class: "form-control"
+  %label.control-label.font-weight-light{for: "zip"}= t('zip')
+  = address.text_field :zip, class: "form-control"

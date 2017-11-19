@@ -26,14 +26,13 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save
-    @advert = @comment.advert
-    #respond_to do |format|
-    #  if @comment.save
-    #    format.js
-    #  else
-    #    format.html { redirect_to :back }
-    #  end
-    #end      
+    respond_to do |format|
+      if @comment.save
+        format.js
+      else
+        format.html { redirect_to :back }
+      end
+    end      
   end
 
   private

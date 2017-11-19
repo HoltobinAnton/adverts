@@ -19,7 +19,7 @@
               = link_to t('my_account'), {}, class: "dropdown-toggle", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"
               %ul.dropdown-menu
                 %li
-                  = link_to t('setting'), edit_user_registration_path
+                  = link_to t('setting'), edit_user_path(address: { user_id: @user.id })
                 %li
                   = link_to t('my_orders'), edit_user_registration_path
                 - if current_user.role.name.eql?('admin')
@@ -32,4 +32,4 @@
             %li
               = link_to t('sign_in'), new_user_session_path
             %li
-              = link_to t('sign_up'), new_user_registration_path
+              = link_to t('sign_up'), new_user_path

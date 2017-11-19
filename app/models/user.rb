@@ -1,8 +1,9 @@
 class User < ApplicationRecord
+  DEF_ADDRESS = { city: 'Kyiv', country: 'Ukraine', state: 'Ukraine',
+                  address: 'Ukraine', zip: '01000' }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
-  #       :authentication_keys => [:login]
   validates :login, :full_name, :birthday, presence: true
   validates_length_of :login, maximum: 20
   validates_length_of :full_name, maximum: 30
@@ -29,12 +30,22 @@ class User < ApplicationRecord
       user.full_name = auth.extra.raw_info.name
       user.birthday = Date.strptime(auth.extra.raw_info.birthday, '%m/%d/%Y')
       user.role_id = Role.find_by_name('user').id
+      address = Address.create(pust_address(auth))
+      user.address = address
     end
   end
 
   private
 
+  def self.pust_address(auth)
+    address = auth.extra.raw_info.location.name.split(',')
+    address.nil? ? DEF_ADDRESS : { city: address.first, country: address.second,
+                                   state: 'Ukraine', address: 'Ukraine',
+                                   zip: '01000' }
+  end
+
   def set_default_role
     self.role ||= Role.find_by_name('user')
   end
+
 end
