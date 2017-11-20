@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :adverts
   has_one :address
   belongs_to :role
+  accepts_nested_attributes_for :address
 
   before_create :set_default_role
 

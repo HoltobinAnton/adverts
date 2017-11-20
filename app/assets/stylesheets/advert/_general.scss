@@ -131,6 +131,17 @@ body {
   width: 50%;
 }
 
+.search{
+  margin-right: 30px;
+  margin-top: 22px;
+}
+
+#search{
+  width:300px;
+  padding-left: 15px;
+  color: $grey-600;
+  
+}
 
 .general-main-container {
   min-height: calc(100vh - #{$footer-sticky-height});

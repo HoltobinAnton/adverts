@@ -33,6 +33,7 @@ gem "remotipart", "~> 1.0"
 gem 'rectify'
 gem 'wicked'
 gem 'RedCloth'
+gem 'pg_search'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -4,7 +4,16 @@ class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
   def index
-    @adverts = Advert.all
+    unless params[:search].nil?
+      @adverts = Advert.search(params[:search])
+      p @adverts
+      p @adverts
+      p @adverts
+      p @adverts
+      @adverts
+    else
+      @adverts = Advert.all
+    end
   end
 
   # GET /adverts/1
