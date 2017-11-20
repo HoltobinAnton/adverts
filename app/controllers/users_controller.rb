@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    p params
     @user = User.find(params[:address][:user_id])
     unless params[:address].nil?
       CheckoutAddress.call(params) do
@@ -28,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    p params
     @user = current_user
     if @user.update(user_params)
       bypass_sign_in(@user)
