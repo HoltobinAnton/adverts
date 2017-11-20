@@ -1,14 +1,7 @@
 class CheckoutAddress < Rectify::Command
   def initialize(params)
-    puts 'params ----------------------------------------'
-    @params = params
-    p @params
-    puts 'params ----------------------------------------'
-    p params[:address]
     @params = params[:address]
     @user = User.last
-    puts 'params ----------------------------------------'
-
   end
 
   attr_reader :params
@@ -24,8 +17,6 @@ class CheckoutAddress < Rectify::Command
   private
 
   def create_address
-    puts "*******************8"
-    p address_form
     @address = Address.create(address_form.to_h)
   end
 

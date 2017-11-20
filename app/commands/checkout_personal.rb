@@ -10,13 +10,13 @@ class CheckoutPersonal < Rectify::Command
     transaction do
       set_user
     end
-    broadcast :valid, @user
+    broadcast :valid
   end
 
   private
 
   def set_user
-    @user = User.create(personal_form.to_h)
+    User.create(personal_form.to_h)
   end
 
   def personal_form
