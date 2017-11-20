@@ -34,6 +34,7 @@ gem 'rectify'
 gem 'wicked'
 gem 'RedCloth'
 gem 'pg_search'
+gem 'cancancan'
 
 group :development, :test do
   gem 'byebug', platform: :mri

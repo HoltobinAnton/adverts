@@ -56,6 +56,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.1.0)
+    cancancan (2.1.1)
     capybara (2.16.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -516,6 +517,7 @@ DEPENDENCIES
   RedCloth
   bootstrap-sass
   byebug
+  cancancan
   capybara
   capybara-screenshot
   carrierwave (~> 1.0)

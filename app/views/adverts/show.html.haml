@@ -11,9 +11,16 @@
         %p.in-grey-600.small.line-height-2
           %textarea.border-none{ rows: 4, cols: 80, readonly: "readonly" }
             = @advert.description
-      = link_to 'Edit', edit_advert_path(@advert)
-      = link_to 'Back', :back
-      = link_to 'Destroy', advert_path(@advert), method: :delete
+        = link_to 'Back', :back
+      - if can? :update, @advert
+        = link_to 'Edit', edit_advert_path(@advert)
+      - if can? :destroy, @advert
+        = link_to 'Destroy', advert_path(@advert), method: :delete
   #comments
     = render partial: 'comments/comments_list', locals: { advert: @advert }
-  = render partial: 'comments/comment_form', locals: { advert: @advert }
+  - if can? :create, Comment
+    = render partial: 'comments/comment_form', locals: { advert: @advert }
+  - else
+    %h3.text-center
+      Only registered users can leave comments
+      = link_to t('log_in'), new_user_session_path, class: 'general-title-margin'

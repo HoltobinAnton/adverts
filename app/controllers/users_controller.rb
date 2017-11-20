@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource only: [:update, :destroy]
   include Wicked::Wizard
-  #before_action :set_user, only: [:show]
 
   steps :personal, :address
+
+  def index
+  end
 
   def new
     redirect_to wizard_path(steps.first)

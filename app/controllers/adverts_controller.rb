@@ -1,4 +1,5 @@
 class AdvertsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -45,7 +46,7 @@ class AdvertsController < ApplicationController
   end
 
   private
-  
+
   def set_advert
     @advert = Advert.find(params[:id])
   end

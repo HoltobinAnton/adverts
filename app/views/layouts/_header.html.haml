@@ -7,14 +7,12 @@
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand= t('advert')
-      
     #navbar.navbar-collapse.collapse.pl-30{'aria-expanded': "false"}
       .hidden-xs
         %ul.nav.navbar-nav
           %li
             .search
               = render partial: 'layouts/search'
-
           %li
             = link_to t('home'), root_url
           
