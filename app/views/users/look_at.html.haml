@@ -35,4 +35,5 @@
         .product-gallery
           .mb-20
             = render partial: "google_map", locals: { address: @user.address }
-        = link_to 'Edit', edit_user_path(address: { user_id: @user.id })
+        - if can? :manage, @user 
+          = link_to 'Edit', edit_user_path(address: { user_id: @user.id })

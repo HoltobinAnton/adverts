@@ -1,5 +1,5 @@
 class AdvertsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource only: [:create, :update, :destroy, :edit]
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
 
   def index
