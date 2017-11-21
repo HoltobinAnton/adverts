@@ -51,8 +51,6 @@ RSpec.describe Ability, type: :model do
     admin = FactoryBot.create(:user)
     admin.role_id = role_admin.id
     ability = Ability.new(admin)
-    it do
-      ability.can?(:manage, :all).should be true
-    end
+    it { ability.can?(:manage, :all).should be true }
   end
 end
