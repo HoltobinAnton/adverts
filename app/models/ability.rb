@@ -13,10 +13,11 @@ class Ability
         can :manage, Comment, user_id: user.id
         can :create, Advert
         can :manage, Advert, user_id: user.id
-      elsif user.role.name == 'modereator'
+      elsif user.role.name == 'moderator'
         can :read, :all
-        cam :manage, Comment
+        can :manage, Comment
         can :manage, Advert
+        can :manage, User, id: user.id
       elsif user.role.name == 'admin'
         can :manage, :all
       end
