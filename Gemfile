@@ -35,6 +35,7 @@ gem 'wicked'
 gem 'RedCloth'
 gem 'pg_search'
 gem 'cancancan'
+gem 'wisper'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -45,6 +46,7 @@ group :development, :test do
   gem 'capybara-screenshot'
   gem 'database_cleaner'
   gem 'simplecov', require: false
+  gem 'wisper-rspec', require: false
 end
 
 group :development do
