@@ -1,3 +1,12 @@
 language: ruby
 rvm:
   - 2.4.2
+env:
+  - DB=postgresql
+before_script:
+  - "rake db:create:all"
+  - "rake db:migrate"
+script:
+  - "bundle exec rake db:test:prepare"
+  - "rake"
+
