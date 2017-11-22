@@ -5,7 +5,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'spec_helper'
 require 'rspec/rails'
-require 'wisper/rspec/matchers'
+require 'wisper/rspec/matchers' 
 require "rectify/rspec"
 require 'capybara/rspec'
 require 'capybara-screenshot/rspec'

@@ -13,4 +13,14 @@ module SupportParams
   def missing_params
     { user: {} }
   end
+
+  def valid_comment
+    { comment: { description: 'testdescription', advert_id: advert.id,
+                 user_id: user.id } }
+  end
+
+  def invalid_comment
+    { comment: { description: 'test', advert_id: 0,
+                 user_id: 0 } }
+  end
 end

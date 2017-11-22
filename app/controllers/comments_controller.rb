@@ -7,8 +7,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to root_path, notice: 'Advert was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
+        format.html { redirect_to root_path, notice: 'Comment was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -18,19 +17,18 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Advert was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Comment was successfully destroyed.' }
       format.js
     end
   end
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.save
     respond_to do |format|
       if @comment.save
         format.js
       else
-        format.html { redirect_to :back }
+        format.html { redirect_to root_path }
       end
     end      
   end

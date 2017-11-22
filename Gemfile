@@ -41,6 +41,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'rails-controller-testing'
+  gem 'shoulda-kept-respond-with-content-type'
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'capybara-screenshot'
