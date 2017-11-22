@@ -23,4 +23,8 @@ module SupportParams
     { comment: { description: 'test', advert_id: 0,
                  user_id: 0 } }
   end
+
+  def valid_advert
+   { advert: { description: 'test', user_id: user.id, avatar: 'test.jpg'}}
+  end
 end
