@@ -5,7 +5,6 @@ RSpec.describe CommentsController, type: :controller do
   let(:user) { advert.user }
   let(:params) { valid_comment }
   before do
-    sign_in user
     allow_any_instance_of(CanCan::ControllerResource).
       to receive(:load_and_authorize_resource) { nil }
   end

@@ -45,16 +45,14 @@ RSpec.describe AdvertsController, type: :controller do
   end
 
   describe 'POST #create' do
-    context 'valid params' do
-      before do
-        post :create,  params: valid_advert
-      end
-      it { is_expected.to respond_with 302 }
-      it { is_expected.to respond_with_content_type :html }
-      it 'should increment by 1' do
-        expect { post :create, params: valid_advert }.
-          to change { Advert.count }.by(1)
-      end
+    before do
+      post :create,  params: valid_advert
+    end
+    it { is_expected.to respond_with 302 }
+    it { is_expected.to respond_with_content_type :html }
+    it 'should increment by 1' do
+      expect { post :create, params: valid_advert }.
+        to change { Advert.count }.by(1)
     end
   end
 
