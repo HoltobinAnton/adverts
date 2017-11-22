@@ -4,7 +4,7 @@
     %div
       .vertical-right
         - if can? :update, comment
-          = link_to 'Edit', edit_comment_path(comment), class: 'margin-top'
+          = link_to 'Change', edit_comment_path(comment), class: 'margin-top'
         - if can? :destroy, comment
           = link_to 'Destroy', comment_path(comment), method: :delete, remote: true, class: 'margin-top'
       

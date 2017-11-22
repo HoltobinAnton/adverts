@@ -45,6 +45,9 @@ group :development, :test do
   gem 'shoulda-kept-respond-with-content-type'
   gem 'factory_bot_rails'
   gem 'capybara'
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  
   gem 'capybara-screenshot'
   gem 'database_cleaner'
   gem 'simplecov', require: false

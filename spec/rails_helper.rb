@@ -9,11 +9,14 @@ require 'wisper/rspec/matchers'
 require "rectify/rspec"
 require 'capybara/rspec'
 require 'capybara-screenshot/rspec'
-require 'support/database_cleaner'
 require "cancan/matchers"
 require 'support/support_params'
+require 'support/wait_for_ajax'
+require 'capybara/poltergeist'
 
-
+Capybara.javascript_driver = :poltergeist
+require 'support/database_cleaner'
+  
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 
 ActiveRecord::Migration.maintain_test_schema!
@@ -26,8 +29,9 @@ RSpec.configure do |config|
   config.include Rectify::RSpec::Helpers
   config.include(Wisper::RSpec::BroadcastMatcher)
   config.include SupportParams
+  config.include WaitForAjax
 
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 end

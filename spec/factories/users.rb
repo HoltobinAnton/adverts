@@ -6,7 +6,6 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { Devise.friendly_token.first(8) }
     role
-
   
   end
 end

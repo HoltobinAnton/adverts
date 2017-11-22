@@ -20,7 +20,7 @@
           
           - if user_signed_in?
             %li.dropdown
-              = link_to t('my_account'), {}, class: "dropdown-toggle", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"
+              = link_to 'My account', {}, class: "dropdown-toggle", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"
               %ul.dropdown-menu
                 %li
                   = link_to t('setting'), edit_user_path(address: { user_id: current_user.id })

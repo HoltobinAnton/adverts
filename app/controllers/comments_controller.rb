@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     respond_to do |format|
       if @comment.save
+        format.html { redirect_to root_path, notice: 'Comment was successfully create.' }
         format.js
       else
         format.html { redirect_to root_path }
