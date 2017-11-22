@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       bypass_sign_in(@user)
-      flash[:success] = t('flash.user.success')
+      flash[:success] = 'User update'
       redirect_to root_path
     else
       render :edit
