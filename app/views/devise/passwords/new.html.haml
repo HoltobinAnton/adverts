@@ -1,0 +1,13 @@
+%main.container
+  .text-center
+    Forgot your password?
+  .res-mb-100
+    .hidden-xs.hidden-sm
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "general-form" }) do |f|
+        .form-group.mb-30
+
+          = f.label :email
+          = f.email_field :email, autofocus: true, class: "form-control"
+          %br
+          = f.submit "Send me reset password instructions", class: 'center-block mb-20 btn btn-default'
+

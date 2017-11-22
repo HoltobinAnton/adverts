@@ -1,0 +1,15 @@
+%main.container
+  .text-center
+    Resend confirmation instructions
+  .res-mb-100
+    .hidden-xs.hidden-sm
+      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "general-form" }) do |f|
+        <div class="form-group">
+
+          = f.label :email
+          = f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+          %br
+          = f.submit "Resend confirmation instructions", class: 'center-block mb-20 btn btn-default'
+
+
+        </div>

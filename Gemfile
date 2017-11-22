@@ -36,6 +36,7 @@ gem 'RedCloth'
 gem 'pg_search'
 gem 'cancancan'
 gem 'wisper'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platform: :mri

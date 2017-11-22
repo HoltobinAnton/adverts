@@ -1,10 +1,10 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name), :html => { class: "general-form" }) do |f|
   .form-group.mb-30
     %label.control-label.font-weight-light{for: "login"}= t('enter_login')
-    = f.text_field :login, autofocus: true, placeholder: t('login'), id: "login", class: "form-control"
+    = f.text_field :login, autofocus: true, placeholder: 'login', id: "login", class: "form-control"
   .form-group.mb-30
     %label.control-label.font-weight-light{for: "password"}= t('enter_password')
-    = f.password_field :password, autocomplete: "off", placeholder: t('password'), id: "password",class: "form-control"
+    = f.password_field :password, autocomplete: "off", placeholder: 'password', id: "password",class: "form-control"
     = link_to t('forgot_password'), new_password_path(resource_name), class: 'help-block in-gold-500'
   - if devise_mapping.rememberable?
     .form-group.checkbox.text-center.mb-30

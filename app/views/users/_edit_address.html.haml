@@ -6,15 +6,15 @@
           .form-group.mb-30
             = f.hidden_field(:user_id, value: address.user_id)
             %label.control-label.font-weight-light{for: "country"}= t('country')
-            = f.text_field :country, class: "form-control get-address", id: 'country'
+            = f.text_field :country, placeholder: "country",class: "form-control get-address", id: 'country'
             %label.control-label.font-weight-light{for: "city"}= t('city')
-            = f.text_field :city, class: "form-control get-address", id: 'city'
+            = f.text_field :city, class: "form-control get-address",placeholder: "city", id: 'city'
             %label.control-label.font-weight-light{for: "state"}= t('state')
-            = f.text_field :state, class: "form-control get-address", id: 'state'
+            = f.text_field :state, placeholder: "state", class: "form-control get-address", id: 'state'
             %label.control-label.font-weight-light{for: "address"}= t('address')
-            = f.text_field :address, class: "form-control get-address", id: 'address'
+            = f.text_field :address, class: "form-control get-address",placeholder: "address", id: 'address'
             %label.control-label.font-weight-light{for: "zip"}= t('zip')
-            = f.text_field :zip, class: "form-control get-address"
+            = f.text_field :zip,placeholder: "zip", class: "form-control get-address"
             %br
               = f.submit 'Update address', class: 'center-block mb-20 btn btn-default'
       .col-sm-6.margin-left
