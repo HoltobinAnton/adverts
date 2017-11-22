@@ -27,4 +27,11 @@ module SupportParams
   def valid_advert
    { advert: { description: 'test', user_id: user.id, avatar: 'test.jpg'}}
   end
+
+   def fill_in_signin_fields(login, pass)
+    fill_in 'user[login]', with: login
+    fill_in 'user[password]', with: pass
+    click_button 'sign_in'
+  end
+  
 end
