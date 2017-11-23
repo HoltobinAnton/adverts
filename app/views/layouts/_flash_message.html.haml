@@ -1,0 +1,4 @@
+.alert
+%div{id: "flash-message-wrapper"}
+  - flash.each do |message_type, message|
+    = content_tag(:div, message, class: "alert alert-#{message_type} fade in", id: "hideMe")

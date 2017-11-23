@@ -1,0 +1,5 @@
+%p.in-gold-500.font-18.mb-25= t('remove_account')
+.general-settings-btn
+  = button_to 'Cancel my account', registration_path(user), data: { confirm: "Are you sure?" }, class: "btn btn-default mb-20", id: "btn_remove", method: :delete
+.form-group.checkbox.general-settings-checkbox
+  %span.checkbox-text.active_button I understand that all data will be lost

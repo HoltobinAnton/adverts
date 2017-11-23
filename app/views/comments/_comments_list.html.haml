@@ -1,0 +1,21 @@
+%h3.in-gold-500.mb-25= "All comments (#{advert.comments.count})"
+- advert.comments.each do |comment| 
+  .ml-70{id: "comment_#{comment.id}"}
+    %div
+      .vertical-right
+        - if can? :update, comment
+          = link_to 'Change', edit_comment_path(comment), class: 'margin-top'
+        - if can? :destroy, comment
+          = link_to 'Destroy', comment_path(comment), method: :delete, remote: true, class: 'margin-top'
+      
+      .max-240
+        .general-message-verified= comment.created_at.strftime("%Y/%m/%d")
+        .general-message-verified= t('create_at:')
+        .general-message-name= comment.user.full_name
+    %p= textile(strip_tags(comment.description)).html_safe
+    - unless comment.avatar.nil?
+      = image_tag comment.avatar, class: "comment_image", alt: "design-advert"
+      .general-message-wrap.divider-lg
+
+
+

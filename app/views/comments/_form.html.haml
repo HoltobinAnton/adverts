@@ -1,0 +1,10 @@
+= form_for comment do |f|
+  .form-group
+    = f.hidden_field(:advert_id, value: comment.advert.id)
+    = f.hidden_field(:user_id, value: current_user.id)
+    = f.text_area :description, rows: 6, cols: 49, maxlength: 160, input_html: { class: 'form-control' }
+    .row.mb-20
+      .col-sm-5
+        = f.file_field :avatar, input_html: { class: 'form-control' }
+      .col-sm-4
+        = f.submit 'Update', class: "btn btn-primary mb-35"

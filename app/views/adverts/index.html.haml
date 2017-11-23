@@ -1,0 +1,7 @@
+%main.container
+  .mb-120
+    = render partial: 'thumb_wrap', locals: { adverts: @items }
+  
+- if can? :create, Advert
+  %h4.text-center
+    = link_to 'Create new Advert', new_advert_path

@@ -1,0 +1,39 @@
+%main.container
+  .res-mb-100
+    = link_to 'back', :back
+    .row
+      .col-sm-4
+        %h1.mt-res-0= @user.full_name
+        .clearfix
+          %p.general-item-info.pull-right= @user.login
+          %p.break-word= t('login')
+        .clearfix
+          %p.general-item-info.pull-right= @user.full_name
+          %p.break-word= t('full_name')
+        .clearfix
+          %p.general-item-info.pull-right= @user.email
+          %p.break-word= t('email')
+        .clearfix
+          %p.general-item-info.pull-right= @user.birthday.strftime("%Y/%m/%d")
+          %p.break-word= t('birthday')
+        .clearfix
+          %p.general-item-info.pull-right{id: 'state'}= @user.address.state
+          %p.break-word= t('state')
+        .clearfix
+          %p.general-item-info.pull-right{id: 'country'}= @user.address.country
+          %p.break-word= t('country')
+        .clearfix
+          %p.general-item-info.pull-right{id: 'city'}= @user.address.city
+          %p.break-word= t('city')
+        .clearfix
+          %p.general-item-info.pull-right{id: 'address'}= @user.address.address
+          %p.break-word= t('address')
+        .clearfix
+          %p.general-item-info.pull-right{id: 'zip'}= @user.address.zip
+          %p.break-word= t('zip')      
+      .col-sm-6.margin-left
+        .product-gallery
+          .mb-20
+            = render partial: "google_map", locals: { address: @user.address }
+        - if can? :manage, @user 
+          = link_to 'Edit', edit_user_path(address: { user_id: @user.id })
